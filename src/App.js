@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import NavBar from './NavBar.js'; // Importe o componente NavBar corretamente
+import React from 'react';
+import './App.css';
+import NavBar from './NavBar';
+import CartWidget from './CartWidget';
 
 function App() {
-    const [cartItems, setCartItems] = useState([]);
-
     return (
         <div className="App">
-            <NavBar cartItems={cartItems} />
+            <NavBar />
+            <CartWidget />
         </div>
     );
 }

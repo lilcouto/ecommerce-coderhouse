@@ -1,16 +1,19 @@
-import React from 'react';
-import { FaShoppingCart } from 'react-icons/fa';
+import React, { useState } from "react";
+import ItemCount from "./ItemCount";
 
-const CartWidget = ({ cartItems }) => {
-    const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+const CartWidget = () => {
+  const [cartItems, setCartItems] = useState(0);
 
-    return (
-        <div className="cart-widget">
-            <FaShoppingCart />
-            <span>{cartItemCount}</span>
-        </div>
-    );
+  const handleAddToCart = (count) => {
+    setCartItems((prevItems) => prevItems + count); 
+  };
+
+  return (
+    <div className="cart-widget">
+      <span>Carrinho: {cartItems}</span>
+      <ItemCount initial={1} stock={10} onAdd={handleAddToCart} />
+    </div>
+  );
 };
 
 export default CartWidget;
-
