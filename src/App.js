@@ -2,12 +2,14 @@ import React from 'react';
 import './App.css';
 import NavBar from './NavBar';
 import CartWidget from './CartWidget';
+import ItemList from './ItemList'; 
 
 function App() {
     return (
         <div className="App">
-            <NavBar />
-            <CartWidget />
+            <NavBar/>
+            <CartWidget/>
+            <ItemList/>
         </div>
     );
 }
